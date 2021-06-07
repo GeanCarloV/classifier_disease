@@ -1,6 +1,5 @@
 import React, {Fragment} from 'react';
-import { useSelector } from 'react-redux'
-
+import {useSelector} from 'react-redux';
 
 const ResultHypertension = () => {
   const result = useSelector (state => state.hypertension.result);
@@ -9,7 +8,7 @@ const ResultHypertension = () => {
       <div className="d-flex justify-content-center">
         <h3>Result</h3>
       </div>
-      <div>
+      <div data-testid="result-hypertension">
         {result ? <p> {result.classification} on {result.atDate}  </p> : null}
 
       </div>

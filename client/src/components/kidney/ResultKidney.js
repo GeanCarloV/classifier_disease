@@ -11,24 +11,21 @@ const options = {
   },
 };
 
-/**
- * The component Result Kidney show us the result of a calculate
- * @returns render parts
- */
 const ResultKidney = () => {
   const result = useSelector (state => state.kidney.result);
-  
-  const [dataDrop, setDataDrop] = useState([])
-  const [labels, setLabels] = useState([])
 
+  const [dataDrop, setDataDrop] = useState ([]);
+  const [labels, setLabels] = useState ([]);
 
-  useEffect(() => {
-    if(result){
-      setDataDrop(result.percentage.map(item => item.atDate));
-      setLabels(result.percentage.map(item => item.drop));
-    }
-    
-  }, [result])
+  useEffect (
+    () => {
+      if (result) {
+        setDataDrop (result.percentage.map (item => item.atDate));
+        setLabels (result.percentage.map (item => item.drop));
+      }
+    },
+    [result]
+  );
 
   const data = {
     labels: dataDrop,
@@ -51,12 +48,13 @@ const ResultKidney = () => {
       </div>
       <div>
         {result
-          ? <div>
+          ? <div data-testid="result-kidney">
               <p> {result.result.classification} on {result.result.atDate}  </p>
-              { result.percentage.length > 0
-               ? <div>
-                <Bar data={data} options={options} />
-              </div> : null}
+              {result.percentage.length > 0
+                ? <div>
+                    <Bar data={data} options={options} />
+                  </div>
+                : null}
             </div>
           : null}
 

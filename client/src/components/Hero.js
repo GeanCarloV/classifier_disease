@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import styled from 'styled-components';
-import NavSection from './Nav'
+import NavSection from './Nav';
 
 const Title = styled.h1`
   font-size: 2.8em;
@@ -12,7 +12,6 @@ const Wrapper = styled.section`
   padding: 1.8em;
   background: #231f20;
 `;
-
 
 const Hero = () => {
   return (
@@ -28,6 +27,5 @@ const Hero = () => {
     </Fragment>
   );
 };
-
 
 export default Hero;

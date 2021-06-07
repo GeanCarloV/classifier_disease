@@ -1,10 +1,10 @@
 import React from 'react';
-import {Col, Row,  Container} from 'react-bootstrap';
-import FormHypertension from './FormHypertension'
+import {Col, Row, Container} from 'react-bootstrap';
+import FormHypertension from './FormHypertension';
 import ResultHypertension from './ResultHypertension';
 import HistoricHypertension from './HistoricHypertension';
 
-const Hypertension = () => {  
+const Hypertension = () => {
   return (
     <Container fluid="xxl" className="mx-3 mt-3" data-testid="Hypertension">
       <Row>
@@ -13,7 +13,7 @@ const Hypertension = () => {
           <FormHypertension />
 
           <div>
-              <HistoricHypertension />
+            <HistoricHypertension />
           </div>
         </Col>
 
